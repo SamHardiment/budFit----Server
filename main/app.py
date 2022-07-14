@@ -6,6 +6,8 @@ from werkzeug import exceptions
 
 # connect to sql db on heroku
 app = Flask(__name__)
+CORS(app)
+
 
 @app.route("/")
 def hello():

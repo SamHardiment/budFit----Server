@@ -1,8 +1,8 @@
-from flask import Flask, current_app
+from flask import Flask, app
 
 
 from .extensions import db
-from .main import main
+from .app import app
 
 def create_app(config_file='settings.py'):
     app = Flask(__name__)
@@ -11,6 +11,6 @@ def create_app(config_file='settings.py'):
 
     db.init_app(app)
 
-    app.register_blueprint(main)
+    app.register_blueprint(app)
 
     return app
